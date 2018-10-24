@@ -23,14 +23,12 @@ def generate_submanifest(directory, baseroute):
 def generate_manifest(folder_path, baseroute):
 	tile_folder = os.path.join(folder_path, 'tiles')
 	module_folder = os.path.join(folder_path, 'modules')
+	style_folder = os.path.join(folder_path, 'styles')
 
 	manifests = { }
-	tile_data = generate_submanifest(tile_folder, baseroute)
-	module_data = generate_submanifest(module_folder, baseroute)
-
-	manifests['tiles'] = tile_data
-	manifests['modules'] = module_data
-
+	manifests['tiles'] = generate_submanifest(tile_folder, baseroute)
+	manifests['modules'] = generate_submanifest(module_folder, baseroute)
+	manifests['styles'] = generate_submanifest(style_folder, baseroute)
 	return manifests
 
 

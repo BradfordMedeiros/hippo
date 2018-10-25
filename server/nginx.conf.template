@@ -1,0 +1,22 @@
+
+events {
+    worker_connections   1024;
+}
+
+http {
+	server {
+  		listen        {{PORT}};
+  		#server_name   www.mysite.com mysite.com;
+  		#error_log     /home/www-data/logs/nginx_www.error.log;
+  		#error_page    404    /404.html;
+
+ 	 	location / {
+    			autoindex on;
+    			root  /home/brad/automate/hippo/server/data-sample;
+
+  		} 
+	   
+	}	
+}
+
+daemon off;

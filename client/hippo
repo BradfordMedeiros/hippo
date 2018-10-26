@@ -4,6 +4,7 @@
 # hippo extensions uninstall <extension_name>
 import imp
 import sys
+import os
 
 def get_module_path(module_name):
 	return './local_data/extensions/tiles/tiles.py'
@@ -11,18 +12,15 @@ def get_module_path(module_name):
 def load_module(module_name): 
 	return imp.load_source(module_name, get_module_path(module_name))
 
-def get_modules():
-	return ['tiles']
+def get_modules(directory):
+	directories = [file for file in os.walk(directory)][0][1]
+	return directories
 
-# returns installed modules
 def get_installed_modules():
 	modules = { }
-
-	for module in get_modules():
+	for module in get_modules('./local_data/extensions'):
 		modules[module] = load_module(module)
-
 	return modules
-
 
 loaded_modules = get_installed_modules()
 
@@ -36,3 +34,4 @@ module_name = sys.argv[1]
 module_command = sys.argv[2:]
 
 execute_command(module_name, module_command)
+

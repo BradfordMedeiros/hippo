@@ -1,5 +1,38 @@
-#!/usr/bin/env bash
 
-#@todo this is the main command line surface for hippo
+# hippo extensions list
+# hippo extensions install <extension_name>
+# hippo extensions uninstall <extension_name>
+import imp
+import sys
+
+def get_module_path(module_name):
+	return './local_data/extensions/tiles/tiles.py'
+
+def load_module(module_name): 
+	return imp.load_source(module_name, get_module_path(module_name))
+
+def get_modules():
+	return ['tiles']
+
+# returns installed modules
+def get_installed_modules():
+	modules = { }
+
+	for module in get_modules():
+		modules[module] = load_module(module)
+
+	return modules
 
 
+loaded_modules = get_installed_modules()
+
+def execute_command(module_name, module_command):
+	print 'module_name: ', module_name
+	print 'command: ', module_command
+	module = loaded_modules[module_name]
+	module.execute_command(module_command)
+
+module_name = sys.argv[1]
+module_command = sys.argv[2:]
+
+execute_command(module_name, module_command)

@@ -12,16 +12,17 @@ def read_extension_manifest(extension_name):
 def get_extension_directory(extension):
 	return os.path.join('./utilities', extension)
 
-def execute_script(extension, script_path):
-	call([os.path.join('.',script_path)], cwd=get_extension_directory(extension))
+def execute_script(extension, script_path, args):
+	call([os.path.join('.',script_path)] + args, cwd=get_extension_directory(extension))
 
 args = sys.argv
 surface = args[1]
-surface_args = args[2:]
+surface_command = args[2]
+surface_args = args[3:]
 
 manifest = read_extension_manifest(surface)
-command_params = surface_args[0]
-command = manifest[command_params]
+command = manifest[surface_command]
+
 script_path = command['script']
-execute_script(surface, script_path)
+execute_script(surface, script_path, surface_args)
 

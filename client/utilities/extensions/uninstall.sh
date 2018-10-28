@@ -1,3 +1,5 @@
 #!/usr/bin/env bash
 
-echo "uninstall placeholder"
+extension_name=$1
+
+echo "name is: $extension_name"

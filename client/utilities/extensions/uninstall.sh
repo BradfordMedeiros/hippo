@@ -1,14 +1,10 @@
 #!/usr/bin/env bash
 set -e
-# this is unsafe since we don't escape input in any way
+
 extension_name=$1
 
 fullpath=$(realpath "../$extension_name")
 extension_path=$(realpath ..)
-
-echo "fullpath: $fullpath"
-echo "ext_path: $extension_path"
-
 extension_name=$(realpath "$fullpath" --relative-to="$extension_path")
 
 echo "ext name: $extension_name" 

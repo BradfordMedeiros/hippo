@@ -7,7 +7,6 @@ fullpath=$(realpath "../$extension_name")
 extension_path=$(realpath ..)
 extension_name=$(realpath "$fullpath" --relative-to="$extension_path")
 
-echo "ext name: $extension_name" 
 first_level=$(echo "$extension_name" | awk -F/ '{ print $1 }')
 if [[ "$first_level" == ".." ]] ;then
 	 echo "invalid extension name"

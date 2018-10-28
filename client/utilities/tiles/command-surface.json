@@ -1,0 +1,13 @@
+{
+	"list": {
+		"script": "list-local-tiles.sh",
+		"description": "some description here"
+	},
+	"add": {
+		"script": "install-tile.sh",
+		"args": "s:r"
+	},
+	"delete": {
+		"script": "delete-tile.sh"
+	}
+}

@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-rm -r ../../../local-data/tiles/*
+rm -r ../../local-data/tiles/*

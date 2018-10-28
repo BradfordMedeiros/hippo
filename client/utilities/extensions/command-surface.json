@@ -1,0 +1,6 @@
+{
+	"list": {
+		"script": "list.sh",
+		"description": "some description here"
+	}
+}

@@ -1,6 +1,11 @@
 {
 	"list": {
-		"script": "list.sh",
-		"description": "some description here"
+		"script": "list.sh"
+	},
+	"install": {
+		"script": "install.sh"
+	},
+	"uninstall": {
+		"script": "uninstall.sh"
 	}
 }

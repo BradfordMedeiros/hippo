@@ -1,7 +1,3 @@
-
-# hippo extensions list
-# hippo extensions install <extension_name>
-# hippo extensions uninstall <extension_name>
 import sys
 import json
 import os

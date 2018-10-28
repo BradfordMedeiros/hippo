@@ -22,11 +22,13 @@ def generate_submanifest(directory, filetype, baseroute):
 	return [create_module_from_filename(file, filetype, baseroute) for file in files]
 
 def generate_manifest(folder_path, baseroute):
+	extension_folder = os.path.join(folder_path, 'extensions')
 	tile_folder = os.path.join(folder_path, 'tiles')
 	module_folder = os.path.join(folder_path, 'modules')
 	style_folder = os.path.join(folder_path, 'styles')
 
 	manifests = { }
+	manifests['extensions'] = generate_submanifest(extension_folder, 'extensions', baseroute)
 	manifests['tiles'] = generate_submanifest(tile_folder, 'tiles', baseroute)
 	manifests['modules'] = generate_submanifest(module_folder, 'modules',  baseroute)
 	manifests['styles'] = generate_submanifest(style_folder, 'styles', baseroute)

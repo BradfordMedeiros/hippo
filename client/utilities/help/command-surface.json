@@ -1,5 +1,6 @@
 {
 	"describe": {
-		"script": "describe.sh"
+		"script": "describe.sh",
+		"description": "lists info for the command (description field of command-surface)"
 	}
 }

@@ -16,8 +16,6 @@ mkdir -p server/data-sample/modules
 mkdir -p server/data-sample/styles
 mkdir -p server/data-sample/tiles
 
-
-
 install_extension extension 
 install_extension help
 install_extension tiles

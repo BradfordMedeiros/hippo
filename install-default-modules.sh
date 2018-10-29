@@ -19,3 +19,9 @@ mkdir -p server/data-sample/tiles
 
 
 install_extension extension 
+install_extension help
+install_extension tiles
+install_extension pkg
+install_extension network
+install_extension modules
+install_extension services

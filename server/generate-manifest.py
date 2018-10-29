@@ -29,9 +29,9 @@ def generate_manifest(folder_path, baseroute):
 
 	manifests = { }
 	manifests['extensions'] = generate_submanifest(extension_folder, 'extensions', baseroute)
-	#manifests['tiles'] = generate_submanifest(tile_folder, 'tiles', baseroute)
-	#manifests['modules'] = generate_submanifest(module_folder, 'modules',  baseroute)
-	#manifests['styles'] = generate_submanifest(style_folder, 'styles', baseroute)
+	manifests['tiles'] = generate_submanifest(tile_folder, 'tiles', baseroute)
+	manifests['modules'] = generate_submanifest(module_folder, 'modules',  baseroute)
+	manifests['styles'] = generate_submanifest(style_folder, 'styles', baseroute)
 	return manifests
 
 

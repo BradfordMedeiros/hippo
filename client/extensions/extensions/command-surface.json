@@ -1,0 +1,11 @@
+{
+	"list": {
+		"script": "list.sh"
+	},
+	"install": {
+		"script": "install.sh"
+	},
+	"uninstall": {
+		"script": "uninstall.sh"
+	}
+}

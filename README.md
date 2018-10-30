@@ -54,3 +54,17 @@ hippo extensions uninstall <extension name>
 which could do something like:
 hippo simple-hippo init
 ~~~~ 
+
+
+add-ons:
+	extensions/
+	styles/
+	tiles/
+	
+server:
+
+client:		-> depends on 2 of extensions in add-ons (for some default ones).  
+server: 	-> no dependencies
+server-bundle   -> depends on server + client + extensions (depends on extensions since serves them, and client used as a blob so can install it initially)
+	
+

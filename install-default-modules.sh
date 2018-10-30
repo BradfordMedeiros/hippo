@@ -7,6 +7,7 @@ function install_extension(){
 }
 
 #INSTALL MODULES TO CLIENT
+mkdir -p client/extensions
 cp -r extensions/extensions/extensions client/extensions/extensions
 cp -r extensions/extensions/pkg client/extensions/pkg
 

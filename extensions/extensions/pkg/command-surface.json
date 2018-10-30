@@ -1,0 +1,8 @@
+{
+	"update": {
+		"script": "update-manifest.sh"
+	},
+	"remote": {
+		"script": "get-remote-url.sh"
+	}
+}

@@ -2,6 +2,9 @@
 	"list": {
 		"script": "list.sh"
 	},
+	"list-remote": {
+		"script": "list-remote-extensions.sh"
+	},
 	"install": {
 		"script": "install.sh"
 	},

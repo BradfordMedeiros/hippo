@@ -2,13 +2,13 @@
 
 function install_extension(){	
    extension_name=$1
-   (cd "extensions/extensions/$extension_name" && tar -cvf "$extension_name" *)
-   mv "extensions/extensions/$extension_name/$extension_name" server/data-sample/extensions
+   (cd "add-ons/extensions/$extension_name" && tar -cvf "$extension_name" *)
+   mv "add-ons/extensions/$extension_name/$extension_name" server/data-sample/extensions
 }
 
 #INSTALL MODULES TO CLIENT
-cp -r extensions/extensions/extensions client/extensions/extensions
-cp -r extensions/extensions/pkg client/extensions/pkg
+cp -r add-ons/extensions/extensions client/extensions/extensions
+cp -r add-ons/extensions/pkg client/extensions/pkg
 
 #INSTALL MODULES TO SERVER
 mkdir -p server/data-sample/extensions

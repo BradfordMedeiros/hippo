@@ -13,4 +13,11 @@ if [[ "$first_level" == ".." ]] ;then
 	 exit 1
 fi
 
+ON_UNINSTALL_SCRIPT=$(cat "../$extension_name/command-surface.json" | jq -r '.on_uninstall')
+UNINSTALL_FULL_PATH=$(realpath "../$extension_name/$ON_UNINSTALL_SCRIPT")
+if [[ -x "$UNINSTALL_FULL_PATH" ]]
+then
+	(cd "../$extension_name" && eval "$UNINSTALL_FULL_PATH")
+fi
+
 rm -r "../$extension_name"

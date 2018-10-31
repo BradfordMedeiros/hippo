@@ -1,10 +1,8 @@
 {
-	"describe": {
-		"script": "describe.sh",
-		"description": "lists info for the command (description field of command-surface)"
-	},
-	"list-commands": {
-		"script": "list-commands.sh",
-		"description": "list commands for an extension"
+	"commands": {
+		"list-commands": {
+			"script": "list-commands.sh",
+			"description": "list commands for an extension"
+		}
 	}
 }

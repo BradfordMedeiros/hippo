@@ -1,14 +1,16 @@
 {
-	"list": {
-		"script": "list.sh"
-	},
-	"list-remote": {
-		"script": "list-remote-extensions.sh"
-	},
-	"install": {
-		"script": "install.sh"
-	},
-	"uninstall": {
-		"script": "uninstall.sh"
+	"commands": {
+		"list": {
+			"script": "list.sh"
+		},
+		"list-remote": {
+			"script": "list-remote-extensions.sh"
+		},
+		"install": {
+			"script": "install.sh"
+		},
+		"uninstall": {
+			"script": "uninstall.sh"
+		}
 	}
 }

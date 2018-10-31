@@ -23,7 +23,7 @@ surface_command = args[2]
 surface_args = args[3:]
 
 manifest = read_extension_manifest(surface)
-command = manifest[surface_command]
+command = manifest["commands"][surface_command]
 
 script_path = command['script']
 execute_script(surface, script_path, surface_args)

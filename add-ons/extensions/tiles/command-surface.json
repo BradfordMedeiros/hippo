@@ -1,17 +1,21 @@
 {
-	"list": {
-		"script": "list-local-tiles.sh",
-		"description": "some description here"
-	},
-	"list-remote": {
-		"script": "list-remote-tiles.sh",
-		"description": "some description here"
-	},
-	"add": {
-		"script": "install-tile.sh",
-		"args": "s:r"
-	},
-	"delete": {
-		"script": "delete-tile.sh"
+	"commands": {
+		"list": {
+			"script": "list-local-tiles.sh",
+			"description": "some description here"
+		},
+		"list-remote": {
+			"script": "list-remote-tiles.sh",
+			"description": "some description here"
+		},
+		"add": {
+			"script": "install-tile.sh",
+			"args": "s:r"
+		},
+		"delete": {
+			"script": "delete-tile.sh"
+		}
 	}
 }
+
+

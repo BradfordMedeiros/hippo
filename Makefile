@@ -9,24 +9,31 @@ client-bundle:
 	cp -r ./add-ons/extensions/pkg ./build/client/extensions
 
 # Server bundle is the server with all the add-ons preinstalled
-server-bundle: server-data
+server-bundle: server-data client-bundle
 	@echo "build server-bundle"
 	mkdir -p ./build
 	cp -r ./server ./build/server
 	cp -r ./build/server-data/* ./build/server/data-sample/
 
 # Server data is the data folder used by the server bundle
-server-data: add-ons
+server-data: packaged-addons
 	@echo "build server-data"
 	mkdir -p ./build/server-data
 	mkdir -p ./build/server-data/styles
 	mkdir -p ./build/server-data/extensions
 	mkdir -p ./build/server-data/modules
 	mkdir -p ./build/server-data/tiles
-	cp -r add-ons/styles ./build/server-data/
-	cp -r add-ons/extensions ./build/server-data/
-	cp -r add-ons/modules ./build/server-data/
-	cp -r add-ons/tiles ./build/server-data/
+	mkdir -p ./build/server-data/blobs
+	cp -r ./build/packaged-addons/build/styles ./build/server-data/
+	cp -r ./build/packaged-addons/build/extensions ./build/server-data/
+	cp -r ./build/packaged-addons/build/modules ./build/server-data/
+	cp -r ./build/packaged-addons/build/tiles ./build/server-data
+
+packaged-addons:
+	@echo "build packaged-addons"
+	mkdir -p ./build/packaged-addons
+	cp -r ./add-ons/* ./build/packaged-addons
+	(cd ./build/packaged-addons && ./package-all.sh)
 
 clean:
 	rm -rf ./build

@@ -21,9 +21,18 @@ then
 fi
 
 
-# download tar to temp directory 
+# Download tar to temp directory 
 curl -o "./$temp_output_archive" -f "$extension_url"
 
-#unzip the tar and delete it
+# Unzip the tar and delete it
 mkdir "$output_directory" && tar -C "$output_directory" -xvf "$temp_output_archive" && rm "$temp_output_archive"
 
+# Execute install script if it exists
+ON_INSTALL_SCRIPT=$(cat "$output_directory/command-surface.json" | jq -r '.on_install')
+INSTALL_FULL_PATH=$(realpath "$output_directory/$ON_INSTALL_SCRIPT")
+echo "full path: $INSTALL_FULL_PATH"
+#echo "install script is: $ON_INSTALL_SCRIPT"
+if [[ -x "$INSTALL_FULL_PATH" ]]
+then
+	(cd "$output_directory" && eval "$INSTALL_FULL_PATH")
+fi

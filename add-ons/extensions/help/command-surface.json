@@ -1,4 +1,6 @@
 {
+	"on_install": "on-install.sh",
+	"on_uninstall": "on-uninstall.sh",
 	"commands": {
 		"list-commands": {
 			"script": "list-commands.sh",

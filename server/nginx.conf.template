@@ -9,7 +9,7 @@ http {
 
  	 	location / {
     			autoindex on;
-    			root  /home/brad/automate/hippo/server/data-sample;
+    			root  {{CONTENT_FOLDER}};
 
   		} 
 	   

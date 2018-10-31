@@ -1,2 +1,3 @@
 client/extensions/
 server/data-sample/manifest.json
+build/

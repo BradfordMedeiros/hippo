@@ -26,13 +26,15 @@ def generate_manifest(folder_path, baseroute):
 	tile_folder = os.path.join(folder_path, 'tiles')
 	module_folder = os.path.join(folder_path, 'modules')
 	style_folder = os.path.join(folder_path, 'styles')
+        blob_folder = os.path.join(folder_path, 'blobs')
 
 	manifests = { }
 	manifests['extensions'] = generate_submanifest(extension_folder, 'extensions', baseroute)
 	manifests['tiles'] = generate_submanifest(tile_folder, 'tiles', baseroute)
 	manifests['modules'] = generate_submanifest(module_folder, 'modules',  baseroute)
 	manifests['styles'] = generate_submanifest(style_folder, 'styles', baseroute)
-	return manifests
+        manifests['blobs'] = generate_submanifest(blob_folder, 'blobs', baseroute)
+        return manifests
 
 
 options = parse_args(sys.argv[1:])

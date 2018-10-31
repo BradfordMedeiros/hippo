@@ -1,4 +1,6 @@
 
+all: client-bundle server-bundle
+	
 # Client bundle is the hippo client with extension and pkg extensions preinstalled
 client-bundle: 
 	mkdir -p ./build/

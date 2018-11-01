@@ -34,3 +34,9 @@ if [[ -x "$INSTALL_FULL_PATH" ]]
 then
 	(cd "$output_directory" && eval "$INSTALL_FULL_PATH")
 fi
+
+# Add supplies to local_data/deps
+cat "$output_directory/command-surface.json" | jq -r .supplies[] >> ../../local_data/deps
+NEW_DEPS=$(cat ../../local_data/deps | sort | uniq)
+echo "$NEW_DEPS" > ../../local_data/deps
+

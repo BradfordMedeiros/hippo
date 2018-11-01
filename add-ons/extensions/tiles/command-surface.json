@@ -1,4 +1,13 @@
 {
+	"depends": [
+		"etcd_automated"
+	],
+	"supplies": [
+		"etcd_tilemanager"
+	],
+	"locks": [
+		"automate"
+	],
 	"commands": {
 		"list": {
 			"script": "list-local-tiles.sh",

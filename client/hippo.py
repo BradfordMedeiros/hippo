@@ -27,4 +27,3 @@ command = manifest["commands"][surface_command]
 
 script_path = command['script']
 execute_script(surface, script_path, surface_args)
-

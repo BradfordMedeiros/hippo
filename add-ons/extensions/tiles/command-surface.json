@@ -1,9 +1,8 @@
 {
 	"depends": [
-		"etcd_automated"
+		"hippo-help"
 	],
 	"supplies": [
-		"etcd_tilemanager"
 	],
 	"locks": [
 		"automate"

@@ -20,4 +20,7 @@ then
 	(cd "../$extension_name" && eval "$UNINSTALL_FULL_PATH")
 fi
 
+# Remove supplies from local data
+python remove-dependencies.py "$extension_name"
+
 rm -r "../$extension_name"

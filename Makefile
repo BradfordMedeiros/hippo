@@ -1,9 +1,6 @@
 
 all: client-bundle server-bundle
 
-run-server: server-bundle
-	(cd ./build/server && ./start.sh)
-
 # Client bundle is the hippo client with extension and pkg extensions preinstalled
 client-bundle: 
 	mkdir -p ./build/

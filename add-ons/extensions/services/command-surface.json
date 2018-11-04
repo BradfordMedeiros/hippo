@@ -7,7 +7,7 @@
 	],
 	"commands": {
 		"add": {
-			"script": "add-service.sh",
+			"script": "add-service.sh"
 		},
 		"delete": {
 			"script": "delete-service.sh"

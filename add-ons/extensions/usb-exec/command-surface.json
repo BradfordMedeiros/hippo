@@ -1,0 +1,21 @@
+{
+	"depends": [
+	],
+	"supplies": [
+	],
+	"locks": [
+	],
+	"commands": {
+		"add": {
+			"script": "add.sh"
+		},
+		"remove": {
+			"script": "remove.sh"
+		},
+		"list": {
+			"script": "list.sh"
+		}
+	}
+}
+
+

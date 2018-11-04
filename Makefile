@@ -22,12 +22,10 @@ server-data: packaged-addons client-bundle
 	mkdir -p ./build/server-data
 	mkdir -p ./build/server-data/styles
 	mkdir -p ./build/server-data/extensions
-	mkdir -p ./build/server-data/modules
 	mkdir -p ./build/server-data/tiles
 	mkdir -p ./build/server-data/blobs
 	cp -r ./build/packaged-addons/build/styles ./build/server-data/
 	cp -r ./build/packaged-addons/build/extensions ./build/server-data/
-	cp -r ./build/packaged-addons/build/modules ./build/server-data/
 	cp -r ./build/packaged-addons/build/tiles ./build/server-data
 	cp ./build/client/client.tar ./build/server-data/blobs
 

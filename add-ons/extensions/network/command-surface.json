@@ -1,0 +1,13 @@
+{
+	"commands": {
+		"add-host": {
+			"script": "add-host.sh"
+		},
+		"remove-host": {
+			"script": "remove-host.sh"
+		},
+		"list": {
+			"script": "list-hosts.sh"
+		}
+	}
+}

@@ -5,7 +5,7 @@ hostname="$1"
 
 file_hash_begin=$(md5sum /etc/hosts)
 
-NEW_HOST_FILE=$(cat /etc/hosts | grep -v  "($hostname #$HIPPO_ID)") 
+NEW_HOST_FILE=$(cat /etc/hosts | grep -v  " $hostname #($HIPPO_ID)$") 
 echo "$NEW_HOST_FILE" > /etc/hosts
 
 file_hash_end=$(md5sum /etc/hosts)

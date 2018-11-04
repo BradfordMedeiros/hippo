@@ -9,8 +9,8 @@
 		"add": {
 			"script": "add-service.sh"
 		},
-		"delete": {
-			"script": "delete-service.sh"
+		"remove": {
+			"script": "remove-service.sh"
 		}
 	}
 }

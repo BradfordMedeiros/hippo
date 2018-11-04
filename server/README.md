@@ -4,7 +4,7 @@ This is a static nginx server that serves up all packages available.
 
 Use cases:
 - Install tiles
-- Install new modules into automate system
+- Install new extensions into automate system
 - Other types of themes/sharing for automate
 
 This might be a mistake. 
@@ -22,7 +22,7 @@ sample layout/ manifest:
 /tiles
     /tile1
     /tile2
-/modules
+/extensions
     /scheduler
     /logic
 /themes 
@@ -30,7 +30,7 @@ sample layout/ manifest:
     /theme2.css
 ~~~~
 
-where tiles, modules are .tar files, themes are css files
+where tiles, extensions are .tar files, themes are css files
 
 generate-manifest.py will go through the folder structure, and create the json object that looks like:
 
@@ -39,8 +39,6 @@ generate-manifest.py will go through the folder structure, and create the json o
        { name: "somename", route: "http://routetotileserver/tiles/tileroute" },
        { .... similar to above 
    ],
-   "modules": [
-	{ name: "module_name", route: "http://routetoserver/module/someroute" },
  
    etc 
 }

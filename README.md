@@ -15,16 +15,6 @@ hippo tiles remove <tilename>
 hippo tiles purge
 ~~~~
 
-module-manipulation:
---------------------
-~~~~
-hippo module list-installed
-hippo module list-remote
-hippo module install <module>
-hippo module uninstall <module>
-hippo modules purge
-~~~~
-
 service-helpers
 ~~~~
 hippo service install path-to-shell-script.sh          # private list maintained by hippo 

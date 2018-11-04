@@ -17,6 +17,7 @@ install_extension tiles
 install_extension pkg
 install_extension network
 install_extension services
+install_extension usb-exec
 
 cp -r ./styles/* ./build/styles
 cp -r ./tiles/* ./build/tiles

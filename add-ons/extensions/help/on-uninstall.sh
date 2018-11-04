@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-touch ../../wow
+touch ./uninstall_script_was_called

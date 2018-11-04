@@ -11,6 +11,15 @@
 		},
 		"remove": {
 			"script": "remove-service.sh"
+		},
+		"list": {
+			"script": "list-services.sh"
+		},
+		"remove-all": {
+			"script": "remove-all.sh"
+		},
+		"generate-config": {
+			"script": "generate-service.sh"
 		}
 	}
 }

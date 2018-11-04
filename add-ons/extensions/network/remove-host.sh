@@ -14,6 +14,4 @@ if [[ "$file_hash_begin" == "$file_hash_end" ]];
 then 
 	echo "host does not exist"
 	exit 1
-else 
-	echo "yay"
 fi 

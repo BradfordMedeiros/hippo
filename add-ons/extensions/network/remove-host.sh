@@ -1,10 +1,19 @@
 #!/usr/bin/env bash
 
-hostname=$1
 HIPPO_ID=$(<hippo-id)
+hostname="$1"
 
-ip_address=$(echo $1)
-hostname=$(echo $2 | awk '{ print $1 }')
+file_hash_begin=$(md5sum /etc/hosts)
 
-NEW_HOST_FILE=$(cat /etc/hosts | grep -v  "$hostname #$HIPPO_ID") 
+NEW_HOST_FILE=$(cat /etc/hosts | grep -v  "($hostname #$HIPPO_ID)") 
 echo "$NEW_HOST_FILE" > /etc/hosts
+
+file_hash_end=$(md5sum /etc/hosts)
+
+if [[ "$file_hash_begin" == "$file_hash_end" ]];
+then 
+	echo "host does not exist"
+	exit 1
+else 
+	echo "yay"
+fi 

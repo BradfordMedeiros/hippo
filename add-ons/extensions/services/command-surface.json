@@ -1,0 +1,18 @@
+{
+	"depends": [
+	],
+	"supplies": [
+	],
+	"locks": [
+	],
+	"commands": {
+		"add": {
+			"script": "add-service.sh",
+		},
+		"delete": {
+			"script": "delete-service.sh"
+		}
+	}
+}
+
+

@@ -25,14 +25,6 @@ curl -o "./$temp_output_archive" -f "$extension_url"
 # Unzip the tar and delete it
 mkdir "$output_directory" && tar -C "$output_directory" -xvf "$temp_output_archive" && rm "$temp_output_archive"
 
-# Execute install script if it exists
-ON_INSTALL_SCRIPT=$(cat "$output_directory/command-surface.json" | jq -r '.on_install')
-INSTALL_FULL_PATH=$(realpath "$output_directory/$ON_INSTALL_SCRIPT")
-if [[ -x "$INSTALL_FULL_PATH" ]]
-then
-	(cd "$output_directory" && eval "$INSTALL_FULL_PATH")
-fi
-
 # Only install extension if the supplies are unique
 # For example, if an extensions supplies etcd_automated, we cannot install another module
 # that supplies that same thing
@@ -40,7 +32,7 @@ for supply in $(cat "$output_directory/command-surface.json" | jq -r .supplies[]
 	if [[ -n "$(cat ../../local_data/deps | grep "^$supply$")" ]];
 	then 
 		echo "dependency already installed for what this supplies, not installing"
-		./uninstall.sh "$1"
+		rm -r "$output_directory"
 		exit 1
 	fi
 done
@@ -50,7 +42,7 @@ for dep in $(cat "$output_directory/command-surface.json" | jq -r .depends[]); d
 	if [[ -z "$(cat ../../local_data/deps | grep "^$dep$")" ]];
 	then 
 		echo "depends not met not, not installing"
-		./uninstall.sh "$1"
+		rm -r "$output_directory"
 		exit 1
 	fi
 done
@@ -61,3 +53,10 @@ NEW_DEPS=$(cat ../../local_data/deps | sort | uniq)
 echo "$NEW_DEPS" > ../../local_data/deps
 
 
+# Execute install script if it exists
+ON_INSTALL_SCRIPT=$(cat "$output_directory/command-surface.json" | jq -r '.on_install')
+INSTALL_FULL_PATH=$(realpath "$output_directory/$ON_INSTALL_SCRIPT")
+if [[ -x "$INSTALL_FULL_PATH" ]]
+then
+	(cd "$output_directory" && eval "$INSTALL_FULL_PATH")
+fi

@@ -13,6 +13,8 @@ if [[ "$first_level" == ".." ]] ;then
 	 exit 1
 fi
 
+python dependent-packages.py "$extension_name" || (echo "cannot install" && exit 1)
+
 ON_UNINSTALL_SCRIPT=$(cat "../$extension_name/command-surface.json" | jq -r '.on_uninstall')
 UNINSTALL_FULL_PATH=$(realpath "../$extension_name/$ON_UNINSTALL_SCRIPT")
 if [[ -x "$UNINSTALL_FULL_PATH" ]]

@@ -1,0 +1,1 @@
+KERNEL=="sg*[0-9]", ACTION=="add", RUN+="{{EXECUTABLE}}"

@@ -6,6 +6,12 @@ extension_url=$(echo "$extension_info" | awk '{ print $2 }')
 output_directory="../$extension_name"
 temp_output_archive="../../local_data/tmp/$(cat /dev/urandom 2>/dev/null | tr -cd 'a-f0-9' 2>/dev/null | head -c 32 2>/dev/null)"
 
+if [ $(id -u) != 0 ]
+then	
+	echo "Install extension must be run as root"
+	exit 1
+fi
+
 if [ -z "$extension_name"  ] 
 then
 	echo "invalid"

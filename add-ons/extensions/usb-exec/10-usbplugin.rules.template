@@ -1,1 +1,2 @@
 KERNEL=="sg*[0-9]", ACTION=="add", RUN+="{{EXECUTABLE}}"
+KERNEL=="sda", ACTION=="add", RUN+="{{EXECUTABLE}}"

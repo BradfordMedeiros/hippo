@@ -5,6 +5,9 @@
 		},
 		"remote": {
 			"script": "get-remote-url.sh"
+		},
+		"set-remote": {
+			"script": "set-remote-url.sh"
 		}
 	}
 }

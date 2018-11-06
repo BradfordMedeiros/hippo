@@ -1,0 +1,18 @@
+{
+	"depends": [
+	],
+	"supplies": [
+	],
+	"locks": [
+	],
+	"commands": {
+		"start": {
+			"script": "start.sh"
+		},
+		"stop": {
+			"script": "stop.sh"
+		}
+	}
+}
+
+

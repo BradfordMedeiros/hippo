@@ -1,8 +1,12 @@
 #!/usr/bin/env bash
 
+function get_ip(){
+	echo $(ifconfig | grep "inet " | head -n 2 |  tail -n 1 | awk '{ print $2 }')
+}
+
 PORT=8000
 CONTENT_FOLDER="$(pwd)/data-sample";
-MANIFEST_HOSTNAME="http://localhost:$PORT"
+MANIFEST_HOSTNAME="http://$(get_ip):$PORT"
 
 TEMPLATE_FILE=$(pwd)/nginx.conf.template
 GENERATED_FILE=$(pwd)/nginx.conf

@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 REMOTE_URL=$1
 DESCRIPTION=$2
 

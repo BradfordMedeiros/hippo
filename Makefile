@@ -1,5 +1,5 @@
 
-all: client-bundle server-bundle
+all: client-bundle server-bundle docker-image
 
 # Client bundle is the hippo client with extension and pkg extensions preinstalled
 client-bundle: 
@@ -8,6 +8,10 @@ client-bundle:
 	cp -r ./add-ons/extensions/extensions ./build/client/extensions
 	cp -r ./add-ons/extensions/pkg ./build/client/extensions
 	(cd ./build/client && tar -cvf client.tar *)
+
+docker-image: server-bundle
+	@echo "build docker image"
+	./build-docker.sh
 
 # Server bundle is the server with all the add-ons preinstalled
 server-bundle: server-data

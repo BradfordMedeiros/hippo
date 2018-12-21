@@ -4,9 +4,13 @@ function get_ip(){
 	echo $(ifconfig | grep "inet " | head -n 2 |  tail -n 1 | awk '{ print $2 }')
 }
 
-PORT=8000
 CONTENT_FOLDER="$(pwd)/data-sample";
-MANIFEST_HOSTNAME="http://$(get_ip):$PORT"
+PORT=8000
+if [[ ! -z "$1" ]]; then 
+  MANIFEST_HOSTNAME="$1"
+else 
+  MANIFEST_HOSTNAME="http://$(get_ip):$PORT" 
+fi
 
 TEMPLATE_FILE=$(pwd)/nginx.conf.template
 GENERATED_FILE=$(pwd)/nginx.conf

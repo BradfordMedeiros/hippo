@@ -44,7 +44,14 @@ generate-manifest.py will go through the folder structure, and create the json o
 }
 
 
+$1 overloads the main url part of the route, for example, first arg to start.sh/docker
 
+./start.sh localhost:4000/someroute
+results in this being added to each route in server, in tiles as example:
+{ name: "somename", route: "localhost:4000/someroute/tiles/tileroute" }
+
+Note this does not change the routing, it remains the same.  This is for use
+in conjunction with load balancers in between.
 
 
 

@@ -9,9 +9,12 @@ client-bundle:
 	cp -r ./add-ons/extensions/pkg ./build/client/extensions
 	(cd ./build/client && tar -cvf client.tar *)
 
+publish-docker: docker-image
+        docker push bradfordmedeiros/hippo:0.2 
+
 docker-image: server-bundle
 	@echo "build docker image"
-	./build-docker.sh
+	docker build -t bradfordmedeiros/hippo:0.2 .
 
 # Server bundle is the server with all the add-ons preinstalled
 server-bundle: server-data

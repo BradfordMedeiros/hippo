@@ -5,11 +5,17 @@ function get_ip(){
 }
 
 CONTENT_FOLDER="$(pwd)/data-sample";
-PORT=8000
+
 if [[ ! -z "$1" ]]; then 
   MANIFEST_HOSTNAME="$1"
 else 
-  MANIFEST_HOSTNAME="http://$(get_ip):$PORT" 
+  MANIFEST_HOSTNAME="http://$(get_ip):8000" 
+fi
+
+if [[ ! -z "$2" ]]; then
+  PORT="$2"
+else 
+  PORT="8000"
 fi
 
 TEMPLATE_FILE=$(pwd)/nginx.conf.template

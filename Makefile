@@ -10,7 +10,7 @@ client-bundle:
 	(cd ./build/client && tar -cvf client.tar *)
 
 publish-docker: docker-image
-        docker push bradfordmedeiros/hippo:0.2 
+	docker push bradfordmedeiros/hippo:0.2 
 
 docker-image: server-bundle
 	@echo "build docker image"

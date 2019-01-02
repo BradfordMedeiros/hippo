@@ -19,6 +19,7 @@ install_extension network
 install_extension services
 install_extension usb-exec
 install_extension automate_docker_0.7
+install_extension espeak
 
 cp -r ./styles/* ./build/styles
 cp -r ./tiles/* ./build/tiles

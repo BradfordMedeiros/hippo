@@ -9,7 +9,7 @@ http {
 
  	 	location {{BASE_ROUTE}} {
     			autoindex on;
-    			root  {{CONTENT_FOLDER}};
+    			alias  {{CONTENT_FOLDER}};
 
   		} 
 	   

@@ -31,7 +31,7 @@ MANIFEST_FILE=$(pwd)/data-sample/manifest.json
 python generate-manifest.py -d ./data-sample/ -b "$MANIFEST_HOSTNAME" > "$MANIFEST_FILE"
 
 sed \
--e "s|{{BASE_ROUTE}}|$BASE_ROUTE|g"
+-e "s|{{BASE_ROUTE}}|$BASE_ROUTE|g" \
 -e "s|{{PORT}}|$PORT|g" \
 -e "s|{{CONTENT_FOLDER}}|$CONTENT_FOLDER|g" \
 "$TEMPLATE_FILE" > "$GENERATED_FILE"

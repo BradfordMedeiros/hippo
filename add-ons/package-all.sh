@@ -21,6 +21,7 @@ install_extension usb-exec
 install_extension automate_docker_0.7
 install_extension espeak
 install_extension midi-listener
+install_extension mqtt-broker
 
 cp -r ./styles/* ./build/styles
 cp -r ./tiles/* ./build/tiles

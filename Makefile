@@ -10,11 +10,11 @@ client-bundle:
 	(cd ./build/client && tar -cvf client.tar *)
 
 publish-docker: docker-image
-	docker push bradfordmedeiros/hippo:0.52
+	docker push bradfordmedeiros/hippo:0.53
 
 docker-image: server-bundle
 	@echo "build docker image"
-	docker build -t bradfordmedeiros/hippo:0.52 .
+	docker build -t bradfordmedeiros/hippo:0.53 .
 
 # Server bundle is the server with all the add-ons preinstalled
 server-bundle: server-data

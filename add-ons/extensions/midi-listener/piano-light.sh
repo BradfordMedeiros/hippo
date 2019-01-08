@@ -3,11 +3,11 @@
 aseqdump -p MPKmini2 | awk '
 /64/ {
    print ("turn on")
-   system("wemo switch light on")
+   system("mqtt --publish -t states/midi -m on")
 }
 
 /60/{
    print ("turn off")
-   system("wemo switch light off")
+   system("mqtt --publish -t states/midi -m off")
 }
 '

@@ -1,0 +1,13 @@
+{
+	"depends": [
+	],
+	"supplies": [
+          "mqtt-client"
+	],
+	"locks": [
+	],
+	"on_install": "on_install.sh",
+	"on_uninstall": "on_uninstall.sh",
+	"commands": {
+        }
+}

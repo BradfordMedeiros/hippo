@@ -1,6 +1,7 @@
 {
 	"depends": [
-	],
+	  "mqtt-client"
+        ],
 	"supplies": [
           "midi-listener"
 	],

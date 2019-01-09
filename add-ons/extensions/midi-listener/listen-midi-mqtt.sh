@@ -10,6 +10,7 @@
 #   "data": <string> 
 #}
 
+# All this tries to do is extract the four columns and publish and mqtt topic.  The escaping/parsing is a bit overly tricky. 
 aseqdump -p MPKmini2 | awk -v sq="'" '
 
 // {
@@ -35,6 +36,5 @@ aseqdump -p MPKmini2 | awk -v sq="'" '
 
    json = "{"  "\"" "source" "\":" "\"" source "\","  "\"" "event" "\":" "\""  event "\"," "\"" "channel" "\":" "\""  channel "\","  "\"" "data" "\":" "\""  data "\"" "}"
    message = "mqtt --publish -t states/midi -m " sq json sq
-   #print "message is " message
    system(message)
 }'

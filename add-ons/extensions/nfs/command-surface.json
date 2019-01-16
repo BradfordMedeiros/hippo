@@ -13,6 +13,9 @@
           },
           "stop": {
             "script": "stop.sh"
+          },
+          "share-directory": {
+            "script": "share-directory.sh"
           }
         }
 }

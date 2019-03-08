@@ -23,6 +23,7 @@ install_extension espeak
 install_extension midi-listener
 install_extension mqtt-broker
 install_extension nfs
+install_extension share
 
 cp -r ./styles/* ./build/styles
 cp -r ./tiles/* ./build/tiles

@@ -1,5 +1,6 @@
 {
 	"depends": [
+		"mqtt-broker"
 	],
 	"supplies": [
 	],
@@ -7,7 +8,7 @@
 	],
 	"commands": {
 		"add": {
-			"script": "add-service.sh"
+			"script": "share-broker.sh"
 		}
 	}
 }

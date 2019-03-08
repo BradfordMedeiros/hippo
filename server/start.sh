@@ -4,7 +4,7 @@ function get_ip(){
 	echo $(ifconfig | grep "inet " | head -n 2 |  tail -n 1 | awk '{ print $2 }')
 }
 
-CONTENT_FOLDER="$(pwd)/data-sample";
+CONTENT_FOLDER="$(pwd)/data-sample/";
 
 if [[ ! -z "$1" ]]; then 
   MANIFEST_HOSTNAME="$1"

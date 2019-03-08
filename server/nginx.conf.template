@@ -4,16 +4,18 @@ events {
 }
 
 http {
-	server {
-  	listen        {{PORT}};
+  server {
+    listen        {{PORT}};
 
- 	 	location {{BASE_ROUTE}} {
-    			autoindex on;
-    			alias  {{CONTENT_FOLDER}};
+    # This is scary, there is a last letter bug in nginx
+    # https://trac.nginx.org/nginx/ticket/97 
+   location {{BASE_ROUTE}} {
+          autoindex on;
+          alias  {{CONTENT_FOLDER}};
 
-  		} 
-	   
-	}	
+      } 
+     
+  }  
 }
 
 daemon off;

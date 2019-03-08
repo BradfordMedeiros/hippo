@@ -7,8 +7,11 @@
 	"locks": [
 	],
 	"commands": {
-		"add": {
+		"start": {
 			"script": "share-broker.sh"
+		},
+		"stop": {
+			"script": "stop-share-broker.sh"
 		}
 	}
 }

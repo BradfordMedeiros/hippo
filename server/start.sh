@@ -6,18 +6,21 @@ function get_ip(){
 
 CONTENT_FOLDER="$(pwd)/data-sample/";
 
+# Populates the url base of the manifest file 
 if [[ ! -z "$1" ]]; then 
   MANIFEST_HOSTNAME="$1"
 else 
   MANIFEST_HOSTNAME="http://$(get_ip):80" 
 fi
 
+# Url of the nginx config
 if [[ ! -z "$2" ]]; then
    BASE_ROUTE="$2"
 else
    BASE_ROUTE="/"
 fi
 
+# Port of nginx
 if [[ ! -z "$3" ]]; then
    PORT="$3"
 else

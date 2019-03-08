@@ -10,8 +10,8 @@ def parse_args(options):
   parser = argparse.ArgumentParser(description='Generate manifest from a folder structure for hippo package manager.')
   parser.error = handle_parse_error # this normally calls exit
   parser.add_argument('-d', '--data', dest='data', required=True, help='root nginx static directory')
-        parser.add_argument('-b', '--basename', dest='basename', required=True, help='basename to use for the manifest')
-        options = parser.parse_args(options)
+  parser.add_argument('-b', '--basename', dest='basename', required=True, help='basename to use for the manifest')
+  options = parser.parse_args(options)
   return vars(options)
 
 def create_module_from_filename(filename, filetype, baseroute):
@@ -25,7 +25,7 @@ def generate_manifest(folder_path, baseroute):
   extension_folder = os.path.join(folder_path, 'extensions')
   tile_folder = os.path.join(folder_path, 'tiles')
   style_folder = os.path.join(folder_path, 'styles')
-        blob_folder = os.path.join(folder_path, 'blobs')
+  blob_folder = os.path.join(folder_path, 'blobs')
 
   manifests = { }
   manifests['extensions'] = generate_submanifest(extension_folder, 'extensions', baseroute)

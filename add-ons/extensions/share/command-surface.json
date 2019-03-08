@@ -1,0 +1,13 @@
+{
+	"depends": [
+	],
+	"supplies": [
+	],
+	"locks": [
+	],
+	"commands": {
+		"add": {
+			"script": "add-service.sh"
+		}
+	}
+}

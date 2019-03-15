@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-echo "stop sharing broker"
+echo "this is unimplimented for now"  > /dev/stderr

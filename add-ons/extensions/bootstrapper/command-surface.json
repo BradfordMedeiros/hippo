@@ -1,0 +1,13 @@
+{
+	"depends": [
+	],
+	"supplies": [
+	],
+	"locks": [
+	],
+	"commands": {
+		"test": {
+			"script": "test.sh"
+		}
+	}
+}

@@ -1,0 +1,3 @@
+[submodule "add-ons/external-repos/bootstrapper"]
+	path = add-ons/external-repos/bootstrapper
+	url = https://github.com/BradfordMedeiros/bootstrapper.git

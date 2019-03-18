@@ -25,5 +25,11 @@ install_extension mqtt-broker
 install_extension nfs
 install_extension share
 
+# External github repos.  These need to be built.  
+# probably shouldn't be doing doing in source builds but whatever
+(cd external-repos/bootstrapper && make bootstrapper) 
+cp -r ./external-repos/bootstrapper/build/* ./extensions/bootstrapper
+install_extension bootstrapper
+
 cp -r ./styles/* ./build/styles
 cp -r ./tiles/* ./build/tiles

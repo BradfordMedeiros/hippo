@@ -27,9 +27,12 @@ install_extension share
 
 # External github repos.  These need to be built.  
 # probably shouldn't be doing doing in source builds but whatever
+# install bootstrapper
 (cd external-repos/bootstrapper && make bootstrapper) 
-cp -r ./external-repos/bootstrapper/build/* ./extensions/bootstrapper
-install_extension bootstrapper
+mv ./external-repos/bootstrapper/build/data ./extensions/bootstrapper/data
+mv ./external-repos/bootstrapper/build/bootstrapper ./extensions/bootstrapper/bootstrapper
+###
+
 
 cp -r ./styles/* ./build/styles
 cp -r ./tiles/* ./build/tiles

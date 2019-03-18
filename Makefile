@@ -3,6 +3,8 @@ all: client-bundle server-bundle docker-image
 
 # Client bundle is the hippo client with extension and pkg extensions preinstalled
 client-bundle: 
+	git submodule init
+	git submodule update
 	mkdir -p ./build/
 	cp -r ./client ./build/
 	cp -r ./add-ons/extensions/extensions ./build/client/extensions

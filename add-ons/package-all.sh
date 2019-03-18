@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 
+# Cannot container a file same as the folder 
 function install_extension(){	
    extension_name=$1
    (cd "extensions/$extension_name" && tar -cvf "$extension_name" *)
-   mv "extensions/$extension_name/$extension_name" ./build/extensions
+   mv "extensions/$extension_name/$extension_name" ./build/extensions/
 }
 
 mkdir -p ./build
@@ -30,7 +31,8 @@ install_extension share
 # install bootstrapper
 (cd external-repos/bootstrapper && make bootstrapper) 
 mv ./external-repos/bootstrapper/build/data ./extensions/bootstrapper/data
-mv ./external-repos/bootstrapper/build/bootstrapper ./extensions/bootstrapper/bootstrapper
+mv ./external-repos/bootstrapper/build/bootstrapper ./extensions/bootstrapper/boot
+install_extension bootstrapper
 ###
 
 

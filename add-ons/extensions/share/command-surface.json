@@ -12,6 +12,9 @@
 		},
 		"stop": {
 			"script": "stop-share-broker.sh"
+		},
+		"share": {
+			"script": "share-centrally.sh"
 		}
 	}
 }

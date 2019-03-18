@@ -24,15 +24,14 @@ install_extension espeak
 install_extension midi-listener
 install_extension mqtt-broker
 install_extension nfs
-install_extension share
 
 # External github repos.  These need to be built.  
 # probably shouldn't be doing doing in source builds but whatever
 # install bootstrapper
 (cd external-repos/bootstrapper && make bootstrapper) 
-mv ./external-repos/bootstrapper/build/data ./extensions/bootstrapper/data
-mv ./external-repos/bootstrapper/build/bootstrapper ./extensions/bootstrapper/boot
-install_extension bootstrapper
+mv ./external-repos/bootstrapper/build/data ./extensions/share/data
+mv ./external-repos/bootstrapper/build/bootstrapper ./extensions/share/bootstrapper
+install_extension share
 ###
 
 
